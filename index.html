@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- index.html = the STRUCTURE of the page. Your info, links and titles live in script.js -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My School Portfolio</title>
+  <!-- Inter = the clean font used in your reference design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Slowly drifting glow circles behind the page -->
+  <div class="bg" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <!-- TOP BAR: stays at the top while scrolling. The links jump to the sections below -->
+  <nav class="topbar">
+    <a class="brand" href="#top" id="brand"></a>
+    <div class="links">
+      <a href="#top">Home</a><a href="#about">About</a><a href="#portfolio">Portfolio</a><a href="#contact">Professor</a>
+    </div>
+    <a class="btn" href="#portfolio">View My Work</a>
+  </nav>
+
+  <!-- HERO: your background photo (set in script.js), name on the left, your picture on the right -->
+  <header class="hero" id="top">
+    <div class="hero__text">
+      <p class="hello">Hello, I'm</p>
+      <h1 id="name"></h1>
+      <p id="section" class="hero__section"></p>
+      <a class="btn" href="#portfolio">View My Work &rarr;</a>
+    </div>
+    <div class="ring"><img id="photo" class="hero__photo" alt="Photo of the student"></div>
+  </header>
+
+  <main>
+    <!-- ABOUT: intro on the left, quick facts card on the right -->
+    <section id="about" class="about">
+      <div>
+        <p class="label">ABOUT ME</p>
+        <h2>Welcome to my portfolio</h2>
+        <p id="intro" class="intro"></p>
+      </div>
+      <ul class="info">
+        <li><span class="ico">🎓</span><div><small>Section</small><b id="infoSection"></b></div></li>
+        <li><span class="ico">📚</span><div><small>Course</small><b id="infoCourse"></b></div></li>
+        <li><span class="ico">🗂️</span><div><small>Total files</small><b id="infoCount"></b></div></li>
+      </ul>
+    </section>
+
+    <!-- PORTFOLIO: Back button + breadcrumb + the folder/file grid -->
+    <section id="portfolio">
+      <p class="label">MY WORK</p>
+      <h2>Activities and Projects</h2>
+      <div class="bar">
+        <!-- BACK BUTTON: hidden on the home page, shown inside folders (script.js controls it) -->
+        <button id="back" class="btn btn--ghost" hidden>&larr; Back</button>
+        <nav id="crumbs" class="crumbs" aria-label="Folder path"></nav>
+      </div>
+      <div id="grid" class="grid"></div>
+    </section>
+  </main>
+
+  <!-- PROFESSOR -->
+  <footer id="contact" class="footer">Submitted to: <strong id="prof"></strong></footer>
+
+  <!-- POP-UP PLAYER -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal__box">
+      <div class="modal__bar">
+        <span id="modalTitle"></span>
+        <button id="closeBtn" aria-label="Close">&times;</button>
+      </div>
+      <div id="spinner" class="spinner"></div>
+      <iframe id="player" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
